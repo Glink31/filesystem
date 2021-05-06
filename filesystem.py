@@ -1,9 +1,10 @@
-class Filesistem():
+from folder import Folder
+class Filesystem():
     def __init__(self):
-        self.root = None
-    def addroot(self,folder):
-        self.root = folder
+        self.root = Folder("C:")
     def additem(self,item):
-        if self.root is not None:
-            self.root.additem(item)
-        
+        self.root.additem(item)
+    def creatememento(self):
+        return MementoReal(self.root.copy())
+    def restore(self,memento):
+        self.root = memento.state.copy
