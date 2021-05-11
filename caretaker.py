@@ -3,7 +3,7 @@ class Caretaker():
         self.states=[]
 
     def savestate(self,memento):
-        self.atates.append(memento)
+        self.states.append(memento)
 
     def restorestate(self,n):
-        return self.states[i]
+        return self.states[n]

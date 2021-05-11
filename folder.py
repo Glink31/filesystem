@@ -7,5 +7,11 @@ class Folder():
     def copy(self):
         f = Folder(self.name)
         for i in range (len(self.contents)):
-            f.additem(self.contents[i])
+            f.additem(self.contents[i].copy())
         return f
+    def prnt(self,depth):
+        for i in range (depth):
+            print('-',end='')
+        print(self.name)
+        for i in range(len(self.contents)):
+            self.contents[i].prnt(depth+1)

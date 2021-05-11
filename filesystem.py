@@ -1,4 +1,5 @@
 from folder import Folder
+from mementoreal import MementoReal
 class Filesystem():
     def __init__(self):
         self.root = Folder("C:")
@@ -7,4 +8,6 @@ class Filesystem():
     def creatememento(self):
         return MementoReal(self.root.copy())
     def restore(self,memento):
-        self.root = memento.state.copy
+        self.root = memento.state.copy()
+    
+            
